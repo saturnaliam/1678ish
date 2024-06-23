@@ -2,22 +2,22 @@ package frc.robot.controller;
 
 import frc.robot.Ports;
 
-public class Controls {
+public class ControlBoard {
     // boooo singleton :(
-    private static Controls instance = null;
+    private static ControlBoard instance = null;
     
     public final CustomController driver;
     public final CustomController operator;
 
-    public static Controls getInstance() {
+    public static ControlBoard getInstance() {
         if (instance == null) {
-            instance = new Controls();
+            instance = new ControlBoard();
         }
 
         return instance;
     }
     
-    private Controls() {
+    private ControlBoard() {
         driver = new CustomController(Ports.DRIVER_PORT);
         operator = new CustomController(Ports.OPERATOR_PORT);
     }
