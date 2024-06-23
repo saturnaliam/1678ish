@@ -15,7 +15,7 @@ public class LEDs {
   }
 
   public void updateState() {
-    if (this.currentState.initTimestamp + this.currentState.interval >= Timer.getFPGATimestamp()) {
+    if (this.currentState.initTimestamp + this.currentState.interval <= Timer.getFPGATimestamp()) {
       this.destroyState();
     }
   }
